@@ -8,7 +8,7 @@ def selectionSort(array, size) -> List[int]:
         array[sort],array[select] = array[select],array[sort]
   return array
 
-# Do not change the following code
+# Do not change the following code//
 input_data = input()
 data = []
 for item in input_data.split(', '):
