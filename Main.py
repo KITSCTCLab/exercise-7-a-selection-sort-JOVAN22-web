@@ -1,15 +1,12 @@
 from typing import List
 
 def selectionSort(array, size) -> List[int]:
-  # Write your code here
-  for i in range(size):
-    min=i
-    for j in range(i+1,size):
-      if(array[min]>array[j]):
-        min=j
-    temp=array[i]
-    array[i]=array[min]
-    array[min]=temp
+  for step in range(size):
+    min_idx = step
+    for i in range(step + 1, size):
+      if array[i] < array[min_idx]:
+        min_idx = i
+    (array[step], array[min_idx]) = (array[min_idx], array[step])
   return array
 
 # Do not change the following code
@@ -21,4 +18,3 @@ for item in input_data.split(', '):
   elif item.lstrip("-").isnumeric():
     data.append(int(item))
 print(selectionSort(data, len(data)))
-
